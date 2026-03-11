@@ -117,10 +117,10 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  \  | SHFT |
 //                    | CTRL| SPACE | LWR |   | SPACE| RSE  | ALT |
                         bindings = <
-   &kp TAB        &kp Q &kp W &kp E &kp R &kp T           &kp Z      &kp LBKT  &kp I     &kp  SEMI &kp P           &shift_N0
-   &cycle_mac_ru  &kp SQT &kp MINUS &kp D &kp F &kp G     &kp H      &kp J     &kp K     &kp L     &altgr_N7       &shift_BSLH
-   &kp LSHFT      &kp Y &kp X &kp C &kp V &kp B           &kp N      &kp M     &altgr_N8 &altgr_N9 &altgr_shift_N7 &kp RSHFT
-                     &kp LCTRL &kp LALT &kp LEFT_COMMAND &kp RCTRL  &mo CHARS &kp RALT 
+   &kp TAB       &kp Q   &kp W     &kp E     &kp R    &kp T            &kp Z      &kp LBKT  &kp I     &kp  SEMI &kp P           &shift_N0
+   &cycle_mac_ru &kp SQT &kp MINUS &kp D     &kp F    &kp G            &kp H      &kp J     &kp K     &kp L     &altgr_N7       &shift_BSLH
+   &kp LSHFT     &kp Y   &kp X     &kp C     &kp V    &kp B            &kp N      &kp M     &altgr_N8 &altgr_N9 &altgr_shift_N7 &kp RSHFT
+                                   &kp LCTRL &kp LALT &kp LEFT_COMMAND &kp RCTRL  &mo CHARS &kp RALT 
                         >;
                 };
 
