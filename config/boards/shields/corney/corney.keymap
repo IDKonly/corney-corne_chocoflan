@@ -94,12 +94,29 @@
 
             flavor = "hold-preferred";
             tapping-term-ms = <180>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <125>;
         };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
+
+    combos {
+        compatible = "zmk,combos";
+
+        togle_homeRowMod {
+            bindings = <&tog 6>;
+            key-positions = <33 34 35>;
+        };
+
+        capslock {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <24 35>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <22 23>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -127,10 +144,10 @@
             //                    | GUI |     | SPC |   | ENT | ALT | DEL |
 
             bindings = <
-&none           &none     &none         &none      &none      &none        &kp PRINTSCREEN  &kp PAGE_DOWN   &kp PAGE_UP   &kp HOME         &kp END  &kp BACKSPACE
-&kp CAPSLOCK    &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &none        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none    &none
-&kp LEFT_SHIFT  &none     &none         &none      &none      &none        &none            &none           &none         &none            &none    &studio_unlock
-                                        &kp LGUI   &none      &kp SPACE    &kp RET          &kp RALT        &kp DELETE
+&none           &kp PRINTSCREEN  &kp DELETE    &none      &none      &none        &kp PRINTSCREEN  &kp PAGE_DOWN   &kp PAGE_UP   &kp HOME         &kp END  &kp BACKSPACE
+&kp CAPSLOCK    &kp LGUI         &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &none        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none    &none
+&kp LEFT_SHIFT  &none            &none         &none      &none      &none        &none            &none           &none         &none            &none    &studio_unlock
+                                               &kp LGUI   &none      &kp SPACE    &kp RET          &kp RALT        &kp DELETE
             >;
         };
 
@@ -187,25 +204,19 @@
             //                    | BTC | BTN | BTP |   |     |     |     |
 
             bindings = <
-&none  &kp F1  &kp F2   &kp F3      &kp F4      &kp PRINTSCREEN    &none  &none       &none      &none          &none      &none
-&none  &kp F5  &kp F6   &kp F7      &kp F8      &none              &none  &kp RSHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RMETA  &none
-&none  &kp F9  &kp F10  &kp F11     &kp F12     &none              &none  &none       &none      &none          &none      &studio_unlock
-                        &bt BT_CLR  &bt BT_NXT  &bt BT_PRV         &none  &none       &none
+&bt BT_CLR  &kp F1  &kp F2   &kp F3      &kp F4      &kp PRINTSCREEN    &none  &none       &none      &none          &none      &none
+&bt BT_NXT  &kp F5  &kp F6   &kp F7      &kp F8      &none              &none  &kp RSHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RMETA  &none
+&bt BT_PRV  &kp F9  &kp F10  &kp F11     &kp F12     &none              &none  &none       &none      &none          &none      &studio_unlock
+                             &bt BT_CLR  &bt BT_NXT  &bt BT_PRV         &none  &none       &none
             >;
         };
 
-        extra4 {
-            // -----------------------------------------------------------------------------------------
-            // |      |     |     |     |     |     |   |     |     |     |     |     |      |
-            // |      |     |     |     |     |     |   |     |     |     |     |     |      |
-            // |      |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    |     |     |     |   |     |     |     |
-
+        No_homerowMod {
             bindings = <
-&kp GRAVE       &kp N1  &kp N2  &kp N3                &kp N4                 &kp N5       &kp N6  &kp N7  &kp N8  &kp N9  &kp N0         &kp BACKSPACE
-&kp LCTRL       &none   &none   &none                 &none                  &none        &none   &none   &none   &none   &kp BACKSLASH  &kp MINUS
-&kp LEFT_SHIFT  &none   &none   &none                 &none                  &none        &none   &none   &none   &none   &none          &kp EQUAL
-                                &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS    &none   &none   &none
+&kp TAB    &kp Q  &kp W  &kp E     &kp R      &kp T        &kp Y        &kp U            &kp I                &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F      &kp G        &kp H        &kp J            &kp K                &kp L    &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V      &kp B        &kp N        &kp M            &kp COMMA            &kp DOT  &kp FSLH  &kp ESC
+                         &kp LGUI  &lt 1 TAB  &kp SPACE    &lt 3 ENTER  &lt 4 RIGHT_ALT  &lt 5 RIGHT_CONTROL
             >;
         };
     };
